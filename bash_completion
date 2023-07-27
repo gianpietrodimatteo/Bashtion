@@ -1,0 +1,20 @@
+#/usr/bin/env bash
+
+# Source all files in completions folder
+# for f in ~/.bash/completions/*; do source $f; done
+
+# co - wrapper for configuraiton files
+complete -W " \
+  alias \
+  function \
+  completion \
+  bash \
+  input \
+  git \
+  tmux \
+  vim \
+  i3 \
+  secret \
+  ssh \
+  " co
+

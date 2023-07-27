@@ -1,0 +1,73 @@
+$include  /etc/inputrc
+
+#------------------------------------------------------------------------------
+# Settings
+#------------------------------------------------------------------------------
+
+# Enables VI editing mode
+set editing-mode vi
+
+# Ignore case for completions
+set completion-ignore-case on
+
+# Treat _ and - as the same for completion
+set completion-map-case On
+
+# Words which have more than one possible completion cause the matches to be
+# listed immediately instead of ringing the bell
+set show-all-if-ambiguous on
+
+# Words which have more than one possible completion without any possible
+# partial completion cause the matches to be listed immediately instead of
+# ringing the bell.
+set show-all-if-unmodified on
+
+# Complete symlinked directories with the slash / at the end like a normal
+# directory
+set mark-symlinked-directories On
+
+# Display common prefix of possible completions before cycling through the list
+# set menu-complete-display-prefix On
+
+# Avoid duplication on completion
+set skip-completed-text on
+
+# Color completions
+set colored-stats On
+
+# Color the common prefix on completions
+set colored-completion-prefix On
+
+#------------------------------------------------------------------------------
+# Keybindings
+#------------------------------------------------------------------------------
+
+# Up and down arrow search through history:
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+# Left and right arrow go left and right:
+"\e[C": forward-char
+"\e[D": backward-char
+
+# [Tab] and [Shift]+[Tab] to cycle through all the possible completions:
+"\t": menu-complete
+"\e[Z": menu-complete-backward
+
+$if mode=vi
+  set show-mode-in-prompt on
+  # colors: main: 1;32m dir: 1;34m
+  set vi-cmd-mode-string "\1\e[1;34m\2:\1\e[0m\2"
+  set vi-ins-mode-string "\1\e[1;34m\2+\1\e[0m\2"
+
+  set keyseq-timeout 50
+  # vi command mode keybindings:
+  set keymap vi-command
+  "gg": beginning-of-history
+  "G": end-of-history
+  # vi insert mode keybindings:
+  set keymap vi-insert
+  "jj": vi-movement-mode
+  "\C-w": backward-kill-word
+  "\C-p": history-search-backward
+$endif
+
