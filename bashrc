@@ -27,15 +27,6 @@ stty -ixon
 # Prompt settings
 PS1='\[\e[1;32m\]\u@\h\[\e[m\]:\[\e[1;34m\]\w\[\e[m\] $ '
 
-# Sources
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
-if [ -f ~/.bash_functions ]; then
-  . ~/.bash_functions
-fi
-
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
@@ -43,3 +34,11 @@ fi
 # Enable color for ls and grep
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+
+# Sources
+[ -s ~/.bash_aliases ] && . ~/.bash_aliases
+[ -s ~/.bash_functions ] && . ~/.bash_functions
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

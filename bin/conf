@@ -23,8 +23,11 @@ case "$1" in
   'bash')
     $EDITOR "${HOME}/.bashrc"
     ;;
-  'profile')
+  'bprofile')
     $EDITOR "${HOME}/.bash_profile"
+    ;;
+  'profile')
+    $EDITOR "${HOME}/.profile"
     ;;
   'input')
     $EDITOR "${HOME}/.inputrc"
@@ -38,12 +41,18 @@ case "$1" in
   'vim')
     $EDITOR "${HOME}/.vim"
     ;;
+  'vbasic')
+    $EDITOR "${HOME}/.vim/basic.vim"
+    ;;
+  'vkeymap')
+    $EDITOR "${HOME}/.vim/keymaps.vim"
+    ;;
+  'vplugin')
+    $EDITOR "${HOME}/.vim/plugins.vim"
+    ;;
   'i3')
     $EDITOR "${HOME}/.config/i3/config"
     i3-msg restart
-    ;;
-  'secret')
-    $EDITOR "${HOME}/.bash/secret.sh"
     ;;
   'ssh')
     $EDITOR "${HOME}/.ssh/config"

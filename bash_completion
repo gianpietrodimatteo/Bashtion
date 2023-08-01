@@ -10,12 +10,16 @@ complete -W " \
   completion \
   variable \
   bash \
+  bprofile \
+  profile \
   input \
   git \
   tmux \
   vim \
+  vbasic \
+  vkeymap \
+  vplugin \
   i3 \
-  secret \
   ssh \
   " co
 
