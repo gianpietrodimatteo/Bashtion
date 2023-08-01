@@ -3,35 +3,35 @@
 # Bashtion installation script
 
 install() {
+  # Create directories
+  mkdir -vp ~/bin
+
   # Create symlinks
   ln -sv "$(pwd)/bashrc" ~/.bashrc
   ln -sv "$(pwd)/inputrc" ~/.inputrc
   ln -sv "$(pwd)/bash_aliases" ~/.bash_aliases
   ln -sv "$(pwd)/bash_functions" ~/.bash_functions
   ln -sv "$(pwd)/bash_completion" ~/.bash_completion
+  ln -sv "$(pwd)/bash_profile" ~/.bash_profile
   ln -sv "$(pwd)/bin/conf" ~/bin
 
-  # Source file
-  . ~/.bashrc
+  # Source files
+  . ~/.bashrc ~/.bash_profile
 }
 
 clean() {
-  # Remove bash folder
-  rm -rf ~/.bash
   # Remove current configurations
-  rm -f ~/.bash* ~/.inputrc ~/bin/conf
-  # Create directory
-  mkdir -vp ~/.bash
+  rm -vf ~/.bashrc ~/.bash_aliases ~/.bash_functions ~/.bash_completion ~/.bash_profile ~/.inputrc ~/bin/conf
 }
 
 prompt() {
-  read -p "This will delete the .bash filder, all your ~/.bash* files and your ~/.inputrc. Proceed? [y]" -n 1 -r
+  read -p "This will delete ~/.bashrc ~/.bash_aliases ~/.bash_functions ~/.bash_completion ~/.bash_profile ~/.inputrc ~/bin/conf. Proceed? [y]" -n 1 -r
   echo
   if [[ $REPLY =~ ^[Yy]$ ]] 
   then
     clean
     install
-    echo "Set up DOWNLOADS WORKSPACE NOTESPATH AND EDITOR variables on ~/.bash/secret.sh"
+    echo "Set up variables (such as $EDITOR) on ~/.bash_variables. Make sure to install bash-completion package."
     exit 1
   else
     echo "Aborted by user."

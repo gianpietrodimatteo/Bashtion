@@ -17,11 +17,14 @@ case "$1" in
   'completion')
     $EDITOR "${HOME}/.bash_completion"
     ;;
+  'variable')
+    $EDITOR "${HOME}/.bash_variables"
+    ;;
   'bash')
     $EDITOR "${HOME}/.bashrc"
     ;;
   'profile')
-    $EDITOR "${HOME}/.profile"
+    $EDITOR "${HOME}/.bash_profile"
     ;;
   'input')
     $EDITOR "${HOME}/.inputrc"

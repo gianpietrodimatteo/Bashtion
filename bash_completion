@@ -8,6 +8,7 @@ complete -W " \
   alias \
   function \
   completion \
+  variable \
   bash \
   input \
   git \

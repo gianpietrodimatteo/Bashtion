@@ -9,6 +9,8 @@ alias ll="ls -l"
 alias la="ls -lathr"
 alias lc="ls -CF"
 alias lr="ls -1lhtrp | grep -v /"
+# FInd only dotfiles of current dir
+alias lh="ls -d .*"
 
 alias cb="cd -"
 alias cu="cd .."
@@ -20,6 +22,8 @@ alias rmr="rm -rf"
 
 alias finda="find . -name"
 alias findi="find . -iname"
+# Find symlinks on current directory. Add -ls to see where they link to
+alias findl="find . -maxdepth 1 -type l"
 
 alias hgrep="history | grep"
 
