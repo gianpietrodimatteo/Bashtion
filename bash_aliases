@@ -31,12 +31,18 @@ alias grepr="grep -r"
 
 # TODO Ack
 
+# Git
+alias gita="git a"
+alias gits="git s"
+alias gitcm="git cm"
+alias gitEmail="git config user.email $EMAIL"
+
 # Pacman
 alias pacs="pacman -Ss"
 alias pacy="sudo pacman -Sy"
 alias pacu="sudo pacman -Syu"
 
-# Quick tmux
+# Tmux
 alias tml="tmux list-sessions"
 alias tma="tmux attach-session -t"
 alias tm0='tmux attach-session -t $(echo `tmux list-sessions` | cut -d ":" -f 1)'
@@ -83,3 +89,5 @@ alias colortest='for x in {0..8}; do for i in {30..37}; do for a in {40..47}; do
 # alias dockeri="docker image ls -a"
 # alias dockerb="docker exec -it $1 bash"
 # alias docker0="docker exec -it $(echo `docker container ls -a` | cut -d " " -f 9) bash"
+
+

@@ -44,3 +44,39 @@ co() {
   conf "$@"
   source ~/.bashrc
 }
+
+# rmLn - remove destination and symlink source to it
+# usage: rmLn <source> <destination>
+rmLn() {
+    rm -f "$2"
+    ln -sv "$1" "$2"
+}
+
+# rmCp - remove destination and copy source to it
+# usage: rmCp <source> <destination>
+rmCp() {
+    rm -f "$2"
+    cp "$1" "$2"
+}
+
+# vimd - vim smart drafts
+# usage: vimd
+vimd() {
+    local base_file="draft"
+    local counter=0
+
+    if [ -z "$DRAFTSPATH" ]
+      then
+        DRAFTPATH="$HOME"
+    fi
+
+    cd $DRAFTSPATH || exit
+
+    while [[ -e "${base_file}${counter}.txt" ]]; do
+        ((counter++))
+    done
+
+    local new_file="${base_file}${counter}.txt"
+    vim "$new_file"
+}
+

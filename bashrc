@@ -38,7 +38,12 @@ alias grep='grep --color=auto'
 # Sources
 [ -s ~/.bash_aliases ] && . ~/.bash_aliases
 [ -s ~/.bash_functions ] && . ~/.bash_functions
+[ -s ~/.bash_variables ] && . ~/.bash_variables
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Set up Node Version Manager (installed from AUR)
+source /usr/share/nvm/init-nvm.sh
+
+# Set up Node Version Manager (installed from git)
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
