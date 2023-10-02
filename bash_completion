@@ -21,5 +21,6 @@ complete -W " \
   vplugin \
   i3 \
   ssh \
+  install \
   " co
 

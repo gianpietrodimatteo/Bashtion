@@ -57,6 +57,9 @@ case "$1" in
   'ssh')
     $EDITOR "${HOME}/.ssh/config"
     ;;
+  'install')
+    $EDITOR "${INSTALL}/install.sh"
+    ;;
   *)
     echo "Not an existing configuration file."
     if [[ "$(readlink -f "$1")" != ${HOME}/* ]]; then
