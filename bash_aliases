@@ -37,6 +37,9 @@ alias gits="git s"
 alias gitcm="git cm"
 alias gitEmail="git config user.email $EMAIL"
 
+# Git Workspace
+alias ws="~/Workspace/git-workspace.sh"
+
 # Pacman
 alias pacs="pacman -Ss"
 alias pacy="sudo pacman -Sy"
