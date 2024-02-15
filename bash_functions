@@ -6,6 +6,14 @@ functions() {
   grep -B 1 usage < "$HOME"/.bash_functions
 }
 
+findo() {
+  find . -iname *$1*
+}
+
+vimo() {
+  vim $(findo $1)
+}
+
 # mkcd - makedir and cd in it
 # usage: mkcd <dir>
 mkcd() {
@@ -67,16 +75,37 @@ vimd() {
 
     if [ -z "$DRAFTSPATH" ]
       then
-        DRAFTPATH="$HOME"
+        DRAFTSPATH="$HOME"
     fi
 
-    cd $DRAFTSPATH || exit
+    cd "$DRAFTSPATH" || exit
 
     while [[ -e "${base_file}${counter}.txt" ]]; do
         ((counter++))
     done
 
     local new_file="${base_file}${counter}.txt"
-    vim "$new_file"
+    vim "$new_file" -c 'silent ToggleAutosave'
+}
+
+# confirm - add a confirmation to next command
+# usage: confirm && <command>
+confirm() {
+    # call with a prompt string or use a default
+    read -r -p "${1:-Are you sure? [y/N]} " response
+    case "$response" in
+        [yY][eE][sS]|[yY])
+            true
+            ;;
+        *)
+            false
+            ;;
+    esac
+}
+
+# cleardrafts - clears all drafts on .vim/drafts
+# usage: cleardrafts
+cleardrafts() {
+    confirm "$@" && rm "$HOME"/.vim/drafts/*
 }
 

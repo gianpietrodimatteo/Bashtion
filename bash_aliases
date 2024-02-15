@@ -29,7 +29,10 @@ alias hgrep="history | grep"
 
 alias grepr="grep -r"
 
-# TODO Ack
+# TODO Ack Ag
+
+# VIM
+alias catdrafts="cd ~/.vim/drafts; tail -n +1 *"
 
 # Git
 alias gita="git a"
@@ -44,6 +47,7 @@ alias ws="~/Workspace/git-workspace.sh"
 alias pacs="pacman -Ss"
 alias pacy="sudo pacman -Sy"
 alias pacu="sudo pacman -Syu"
+alias pacq="pacman -Q"
 
 # Tmux
 alias tml="tmux list-sessions"
@@ -61,6 +65,7 @@ alias sysver="uname -a; lsb_release -a; hostnamectl;"
 # Util
 alias curly="curl -sSL"
 alias tailf="tail -F"
+alias tailn="tail -n +1"
 alias trash='mv -t $HOME/.local/share/Trash/files/'
 alias lessh="less -m -N -g -i -J --line-numbers --underline-special"
 alias ssh_rsa_email="ssh-keygen -t rsa -b 4096 -C"
@@ -71,6 +76,12 @@ alias ga="ffmpeg -r 10 -i"
 alias liquidate="date +\"%Y%m%d%H%M%S\""
 alias cooldate="date +\"%Y/%m/%d:%H:%M:%S\""
 alias namedate="date +\"%Y-%m-%d-%H-%M-%S\""
+# Sort everything by size
+alias lall="sudo du -a . | sort -n -r | head -n 20"
+# Sort directories by size
+alias ldir='du -cks * | sort -rn | head'
+# Sort files by size
+alias lfiles="find . -type f -printf '%s %p\n' | sort -nr | head -10"
 
 alias notebook='cd $NOTESPATH && vim -c CtrlP -c "silent ToggleAutosave"'
 
@@ -81,6 +92,7 @@ alias tarxz="tar -Jxxvf"
 alias unrar="unrar x"
 alias 7zip="7z e"
 alias uniso="7z e"
+alias gzipd="gzip -d"
 
 # Misc
 alias rm_empty_lines="sed -r '/^\s*$/d'"
