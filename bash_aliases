@@ -48,6 +48,11 @@ alias pacs="pacman -Ss"
 alias pacy="sudo pacman -Sy"
 alias pacu="sudo pacman -Syu"
 alias pacq="pacman -Q"
+# remove package
+alias pacr="pacman -R"
+alias pacrd="pacman -Rdd"
+# clear cache
+alias pacsc="pacman -Sc"
 
 # Tmux
 alias tml="tmux list-sessions"
