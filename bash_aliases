@@ -42,6 +42,7 @@ alias gitEmail="git config user.email $EMAIL"
 
 # Git Workspace
 alias ws="~/Workspace/git-workspace.sh"
+alias wsc="ws status | grep Changes"
 
 # Pacman
 alias pacs="pacman -Ss"
@@ -95,8 +96,8 @@ alias targz="tar zxvf"
 alias tarbz2="tar -xvjf"
 alias tarxz="tar -Jxxvf"
 alias unrar="unrar x"
-alias 7zip="7z e"
-alias uniso="7z e"
+alias 7zip="7z x"
+alias uniso="7z x"
 alias gzipd="gzip -d"
 
 # Misc
