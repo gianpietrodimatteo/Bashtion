@@ -50,8 +50,8 @@ alias pacy="sudo pacman -Sy"
 alias pacu="sudo pacman -Syu"
 alias pacq="pacman -Q"
 # remove package
-alias pacr="pacman -R"
-alias pacrd="pacman -Rdd"
+alias pacr="sudo pacman -R"
+alias pacrd="sudo pacman -Rdd"
 # clear cache
 alias pacsc="pacman -Sc"
 
